@@ -4,29 +4,29 @@ import isEqual from 'lodash/isEqual';
 import { initFieldValue } from '../actions';
 import EditMessage from './EditMessage';
 
-const App = ({ fieldValue, extension, dispatch }) => {
+const App = ({ fieldValue, sdk, dispatch }) => {
     useEffect(() => {
-        if (extension.field.getValue() && extension.field.getValue() !== {}) {
-            dispatch(initFieldValue(extension.field.getValue()));
+        if (sdk.field.getValue() && sdk.field.getValue() !== {}) {
+            dispatch(initFieldValue(sdk.field.getValue()));
         } else {
             setFieldValue();
         }
 
-        extension.window.startAutoResizer();
+        sdk.window.startAutoResizer();
 
         return () => {
             // Anything in here is fired on component unmount.
-            extension.window.stopAutoResizer();
+            sdk.window.stopAutoResizer();
         };
     }, []);
 
     useEffect(() => {
-        if (extension.field.getValue() && !isEqual(fieldValue, extension.field.getValue())) {
+        if (sdk.field.getValue() && !isEqual(fieldValue, sdk.field.getValue())) {
             setFieldValue();
         }
     }, [fieldValue]);
 
-    const setFieldValue = () => extension.field.setValue(fieldValue);
+    const setFieldValue = () => sdk.field.setValue(fieldValue);
 
     return (
         <div>

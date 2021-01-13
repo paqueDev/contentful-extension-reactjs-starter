@@ -17,10 +17,10 @@ const initialState = {
 
 const store = createStore(rootReducer, initialState, applyMiddleware(logger));
 
-init(extension => {
+init(sdk => {
     ReactDOM.render(
         <Provider store={store}>
-            <App extension={extension}/>
+            <App sdk={sdk}/>
         </Provider>,
         document.getElementById('root')
     );
