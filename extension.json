@@ -1,0 +1,7 @@
+{
+  "id": "extension-starter",
+  "name": "Extension Starter",
+  "srcdoc": "./build/index.html",
+  "sidebar": false,
+  "fieldTypes": ["Object"]
+}
