@@ -14,5 +14,4 @@ export const Container = styled.div`
   & textarea{
     min-height : 100px;
   }
-  
 `;

@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import React, {useEffect} from 'react';
+import {connect} from 'react-redux';
 import isEqual from 'lodash/isEqual';
-import { initFieldValue } from '../actions';
+import {initFieldValue} from '../actions';
 import EditMessage from './EditMessage';
 
-const App = ({ fieldValue, sdk, dispatch }) => {
+const App = ({fieldValue, sdk, dispatch}) => {
     useEffect(() => {
         if (sdk.field.getValue() && sdk.field.getValue() !== {}) {
             dispatch(initFieldValue(sdk.field.getValue()));
@@ -21,9 +21,7 @@ const App = ({ fieldValue, sdk, dispatch }) => {
     }, []);
 
     useEffect(() => {
-        if (sdk.field.getValue() && !isEqual(fieldValue, sdk.field.getValue())) {
-            setFieldValue();
-        }
+        setFieldValue();
     }, [fieldValue]);
 
     const setFieldValue = () => sdk.field.setValue(fieldValue);
@@ -39,7 +37,7 @@ const App = ({ fieldValue, sdk, dispatch }) => {
     );
 };
 
-const mapStateToProps = ({ fieldValue }) => ({
+const mapStateToProps = ({fieldValue}) => ({
     fieldValue: fieldValue,
 });
 export default connect(mapStateToProps)(App);
