@@ -67,7 +67,7 @@ __To preview result of build on Contentful Platform__
 2 - Choose extension as appearance for field : 
 * go to the configuration of your Content Model
 * select the field where your want to use the extension and go on his settings
-* on apperance, choose yournew extension
+* on apperance, choose your new extension
 
 3 - Create Content : 
 * go to Content and create content corresponding to your content model
