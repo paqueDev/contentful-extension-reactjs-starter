@@ -1,6 +1,6 @@
 module.exports = {
     extends: ["standard"],
-    plugins: ["standard", "react"],
+    plugins: ["standard", "react", "@babel"],
     rules: {
         "eqeqeq" : "warn",
         "no-var": "error", // optional, recommended when using es6+
@@ -45,8 +45,12 @@ module.exports = {
         "no-tabs": 0
 
     },
-    parser: "babel-eslint",
+    parser: "@babel/eslint-parser",
     parserOptions: {
-        ecmaVersion: 8, // optional, recommended 6+
+        babelOptions: {
+            plugins: [
+                "@babel/plugin-proposal-class-properties",
+            ],
+        },
     }
-}
+};
