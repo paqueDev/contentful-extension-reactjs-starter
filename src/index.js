@@ -7,7 +7,7 @@ import logger from 'redux-logger';
 
 import { init } from 'contentful-ui-extensions-sdk';
 
-import App from './containers/App';
+import App from './App';
 
 const initialState = {
     fieldValue: {

@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import isEqual from 'lodash/isEqual';
-import {initFieldValue} from '../actions';
-import EditMessage from './EditMessage';
+import {initFieldValue} from './actions';
+import EditMessage from './components/EditMessage';
 
 const App = ({fieldValue, sdk, dispatch}) => {
     useEffect(() => {
